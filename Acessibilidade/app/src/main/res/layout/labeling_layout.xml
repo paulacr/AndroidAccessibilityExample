@@ -21,30 +21,26 @@
         android:src="@drawable/ic_app"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
+        android:contentDescription="@null"
         />
 
-
-    <EditText
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:hint="@string/texto_usuario"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:text="@string/logar_com_redes_sociais"
+        android:textSize="20sp"
+        android:layout_marginTop="45dp"
+        android:textStyle="bold"
         android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginEnd="20dp"
-        android:hint="@string/texto_senha"/>
+        android:layout_marginStart="20dp"/>
+
 
     <LinearLayout
         android:id="@+id/socialNetworkConnectLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:id="@+id/botao_facebook"
@@ -52,6 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/facebookicon"
+            android:contentDescription="@string/logar_com_facebook"
+
             />
 
         <ImageView
@@ -60,6 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/twittericon"
+            android:contentDescription="@string/logar_com_twitter"
             />
 
         <ImageView
@@ -68,6 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/google"
+            android:contentDescription="@string/logar_com_google"
             />
 
     </LinearLayout>
@@ -84,8 +84,5 @@
         android:text="@string/texto_ultima_vez_logado"
         android:textSize="18sp"
         />
-
-
-
 
 </LinearLayout>

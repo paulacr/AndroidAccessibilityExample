@@ -38,4 +38,8 @@
     <string name="live_region_scrollview">Live region scrollview</string>
     <string name="customviews">CustomViews</string>
     <string name="floating_action_button">Floating Action Button</string>
+    <string name="logar_com_redes_sociais">Logar com redes sociais</string>
+    <string name="logar_com_facebook">Logar com facebook</string>
+    <string name="logar_com_twitter">Logar com twitter</string>
+    <string name="logar_com_google">Logar com google</string>
 </resources>

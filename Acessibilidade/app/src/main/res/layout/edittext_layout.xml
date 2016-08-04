@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/texto_hint_nome_usuario"
+        android:labelFor="@+id/texto_nome"
         >
 
         <EditText
@@ -31,7 +32,8 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/texto_hint_idade">
+        android:hint="@string/texto_hint_idade"
+        android:labelFor="@+id/texto_idade">
 
         <EditText
             android:id="@+id/texto_idade"
@@ -44,7 +46,8 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/texto_hint_nome_github">
+        android:hint="@string/texto_hint_nome_github"
+        android:labelFor="@+id/texto_nome_perfil">
 
         <EditText
             android:id="@+id/texto_nome_perfil"

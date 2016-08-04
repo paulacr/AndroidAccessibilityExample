@@ -108,7 +108,7 @@ public class LiveRegionActivity extends AppCompatActivity {
          * Live Region
          */
         ViewCompat.setAccessibilityLiveRegion(llSistemaIndisponivel,
-                ViewCompat.ACCESSIBILITY_LIVE_REGION_POLITE);
+                ViewCompat.ACCESSIBILITY_LIVE_REGION_ASSERTIVE);
 
     }
 

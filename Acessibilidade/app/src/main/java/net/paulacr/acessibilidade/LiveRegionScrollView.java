@@ -53,6 +53,9 @@ public class LiveRegionScrollView extends AppCompatActivity {
             public void run() {
                 escondeDialog();
                 scrollviewLembretesSemana.setVisibility(View.VISIBLE);
+                /**
+                 * Acessibilidade
+                 */
                 ViewCompat.setAccessibilityLiveRegion(
                         layoutSegunda,
                         ViewCompat.ACCESSIBILITY_LIVE_REGION_POLITE);

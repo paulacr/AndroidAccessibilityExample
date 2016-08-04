@@ -32,4 +32,8 @@ public class MainActivity extends AppCompatActivity {
     @Click(R.id.botao_customview) void aoClicarEmCustomView() {
         CustomViewActivity_.intent(this).start();
     }
+
+    @Click(R.id.botao_floating_action_button) void aoClicarEmFloatingActionButton() {
+        FloatingActionButtonActivity_.intent(this).start();
+    }
 }
