@@ -20,9 +20,9 @@
         <activity android:name=".EditTextActivity_"/>
         <activity android:name=".LiveRegionActivity_"/>
         <activity android:name=".AgruparViewsActivity_"/>
-        <activity android:name=".LiveRegionScrollView_"/>
         <activity android:name=".CustomViewActivity_"/>
         <activity android:name=".FloatingActionButtonActivity_"/>
+        <activity android:name=".ViewsExpansiveisActivity_"/>
     </application>
 
 </manifest>

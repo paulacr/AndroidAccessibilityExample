@@ -2,7 +2,6 @@ package net.paulacr.acessibilidade;
 
 import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
@@ -22,10 +21,18 @@ public class FloatingActionButtonActivity extends AppCompatActivity {
     @ViewById
     TextView textoEditarPerfilFab;
 
-    @AfterViews void aoIniciar() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
-            fab.setAccessibilityTraversalBefore(R.id.texto_editar_perfil_fab);
+    /**
+     * #Acessibilidade
+     * Usado método setTranversalBefore(int id) pois o FAB deve ser lido antes
+     * de outros elementos na tela
+     */
+    @AfterViews
+    void aoIniciar() {
+        if (Build.VERSION.SDK_INT >=
+                Build.VERSION_CODES.LOLLIPOP_MR1) {
+
+            fab.setAccessibilityTraversalBefore
+                    (R.id.texto_editar_perfil_fab);
         }
     }
-
 }

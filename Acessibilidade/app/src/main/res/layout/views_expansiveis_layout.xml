@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <!-- #Acessibilidade coloca content description no layout, para o estado inicial
+    que é quando o layout está recolhido-->
+    <LinearLayout
+        android:id="@+id/layout_view_tarefas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:contentDescription="tarefas para lembrar hoje, toque duas vezes para expandir"
+        >
+
+        <TextView
+            android:id="@+id/tarefas_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tarefas para lembrar hoje"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            />
+
+        <ImageView
+            android:id="@+id/view_expansivel_icone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:src="@drawable/down_arrow"
+            android:contentDescription="@null" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_tarefas_detalhe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="* Passar no supermercado"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="* Lavar a louça"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="* Estudar"/>
+
+    </LinearLayout>
+
+</LinearLayout>

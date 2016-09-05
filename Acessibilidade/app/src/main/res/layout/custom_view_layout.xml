@@ -5,24 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
+    <Button
+        android:id="@+id/botao_mostrar_custom_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="testando custom view"
+        android:text="mostrar customview"
         android:textSize="20sp"
-        android:layout_margin="20dp"
-        android:nextFocusDown="@+id/arrow_view"
-        android:nextFocusRight="@+id/arrow_view"/>
+        android:layout_margin="20dp" />
 
-
-    <net.paulacr.acessibilidade.CustomView_
-        android:id="@+id/arrow_view"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:paddingEnd="20dp"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        />
-
-
+        <net.paulacr.acessibilidade.CustomView_
+            android:id="@+id/view_arrow"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:paddingEnd="20dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:visibility="gone"
+            />
 </LinearLayout>

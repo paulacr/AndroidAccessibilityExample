@@ -1,10 +1,10 @@
 package net.paulacr.acessibilidade;
 
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.accessibility.AccessibilityEvent;
-
-import org.androidannotations.annotations.AfterViews;
+import android.widget.Button;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
@@ -15,19 +15,23 @@ import org.androidannotations.annotations.ViewById;
 public class CustomViewActivity extends AppCompatActivity{
 
     @ViewById
-    CustomView arrowView;
+    CustomView viewArrow;
 
-    @AfterViews void aoIniciar() {
+    @ViewById
+    Button botaoMostrarCustomView;
 
-        arrowView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(arrowView.isFocused()) {
-                    arrowView.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED);
-                }
-            }
-        });
+    /**
+     * #Acessibilidade
+     * Quando a view fica visível precisamos que seja falada pelo talkback
+     * entao na classe da view customizada (CustomView.java) chamamos o método
+     * announceForAccessibility("texto")
+     */
+    @Click(R.id.botao_mostrar_custom_view) void aoClicarBotao() {
+        if(viewArrow.getVisibility() == View.GONE) {
+            viewArrow.setVisibility(View.VISIBLE);
+
+        } else {
+            viewArrow.setVisibility(View.GONE);
+        }
     }
-
-
 }

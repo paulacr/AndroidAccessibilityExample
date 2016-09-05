@@ -42,4 +42,6 @@
     <string name="logar_com_facebook">Logar com facebook</string>
     <string name="logar_com_twitter">Logar com twitter</string>
     <string name="logar_com_google">Logar com google</string>
+    <string name="view_expansivel">Views Expansíveis</string>
+    <string name="texto_botao_navegacao">Navegabilidade de views</string>
 </resources>

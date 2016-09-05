@@ -7,7 +7,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="net.paulacr.acessibilidade.MainActivity"
     android:orientation="vertical">
 
@@ -23,57 +22,66 @@
                 android:id="@+id/botao_labeling_views"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:text="@string/texto_botao_nomear_views"
-                android:textSize="20sp"/>
+                android:textSize="14sp"/>
 
             <Button
-                android:id="@+id/botao_edittext"
+                android:id="@+id/botao_navegacao_views"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/texto_botao_edittext"
-                android:textSize="20sp"/>
-
-            <Button
-                android:id="@+id/botao_floating_action_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/floating_action_button"
-                android:textSize="20sp"/>
+                android:layout_marginTop="10dp"
+                android:text="@string/texto_botao_navegacao"
+                android:textSize="14sp"/>
 
             <Button
                 android:id="@+id/botao_groupviews"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:text="@string/texto_botao_agrupamento_de_views"
-                android:textSize="20sp"/>
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/botao_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/texto_botao_edittext"
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/botao_floating_action_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/floating_action_button"
+                android:textSize="14sp"/>
+
+
 
             <Button
                 android:id="@+id/botao_liveregion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:text="@string/texto_botao_live_region"
-                android:textSize="20sp"/>
-
-            <Button
-                android:id="@+id/botao_liveregion_scrollview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/live_region_scrollview"
-                android:textSize="20sp"/>
+                android:textSize="14sp"/>
 
             <Button
                 android:id="@+id/botao_customview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:text="@string/customviews"
-                android:textSize="20sp"/>
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/botao_view_expansivel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/view_expansivel"
+                android:textSize="14sp"/>
 
         </LinearLayout>
     </ScrollView>

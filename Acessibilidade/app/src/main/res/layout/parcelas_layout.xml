@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- #Acessibilidade Agrupa views e seta atributo de foco para
+    que seja lido junto pelo talkback-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/texto_plano_mensal"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <!-- #Acessibilidade No atributo contentDescription do texto
+        seta de forma diferente o X , para que seja lido de outra forma
+        pelo talkback-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="24 x R$ 25,90"
+            android:contentDescription="24 vezes de R$ 25,90"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <!-- #Acessibilidade No atributo contentDescription do texto
+        seta de forma diferente o vencimento, para que seja lido
+        de outra forma pelo talkback-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Vencimento"
+            android:contentDescription="Vencimento em"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="29/10/2016"
+            android:textSize="18sp"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,7 +1,6 @@
 package net.paulacr.acessibilidade;
 
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
@@ -25,15 +24,15 @@ public class MainActivity extends AppCompatActivity {
         LiveRegionActivity_.intent(this).start();
     }
 
-    @Click(R.id.botao_liveregion_scrollview) void aoClicarEmLiveRegionScrollview() {
-        LiveRegionScrollView_.intent(this).start();
-    }
-
     @Click(R.id.botao_customview) void aoClicarEmCustomView() {
         CustomViewActivity_.intent(this).start();
     }
 
     @Click(R.id.botao_floating_action_button) void aoClicarEmFloatingActionButton() {
         FloatingActionButtonActivity_.intent(this).start();
+    }
+
+    @Click(R.id.botao_view_expansivel) void aoClicarViewsExpansiveis() {
+        ViewsExpansiveisActivity_.intent(this).start();
     }
 }

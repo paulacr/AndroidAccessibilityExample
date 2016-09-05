@@ -93,7 +93,11 @@ public class LiveRegionActivity extends AppCompatActivity {
         listaJogos.setAdapter(jogosAdapter);
 
         /**
-         * Live Region
+         * #Acessibilidade
+         * Live Region para fazer com que talkback fale
+         * em tempo de execução as views que aparecem depois
+         * da tela ter sido criada.
+         * Modo polite = espera o talkback parar de falar
          */
         ViewCompat.setAccessibilityLiveRegion(listaJogos,
                 ViewCompat.ACCESSIBILITY_LIVE_REGION_POLITE);
@@ -105,7 +109,11 @@ public class LiveRegionActivity extends AppCompatActivity {
         llSistemaIndisponivel.setVisibility(View.VISIBLE);
 
         /**
-         * Live Region
+         * #Acessibilidade
+         * Live Region para fazer com que talkback fale
+         * em tempo de execução as views que aparecem depois
+         * da tela ter sido criada.
+         * Modo polite = espera o talkback parar de falar
          */
         ViewCompat.setAccessibilityLiveRegion(llSistemaIndisponivel,
                 ViewCompat.ACCESSIBILITY_LIVE_REGION_ASSERTIVE);

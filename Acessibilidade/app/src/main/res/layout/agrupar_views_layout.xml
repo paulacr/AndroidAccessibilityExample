@@ -2,16 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginEnd="20dp">
 
+    <!-- #Acessibilidade agrupamento views, colocando elementos dentro de
+    uma view group, e nesta viewgroup colocando atributos de foco, como
+    focusable e focusableInTouchMode-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginEnd="20dp"
         android:orientation="horizontal"
         android:focusable="true"
         android:focusableInTouchMode="true">
@@ -34,14 +37,12 @@
 
     </LinearLayout>
 
+    <!-- #Acessibilidade agrupamento views, colocando elementos dentro de
+    uma view group, e nesta viewgroup colocando atributos de foco, como
+    focusable e focusableInTouchMode-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginEnd="20dp"
         android:orientation="horizontal"
         android:focusable="true"
         android:focusableInTouchMode="true">
@@ -62,14 +63,12 @@
 
     </LinearLayout>
 
+    <!-- #Acessibilidade agrupamento views, colocando elementos dentro de
+    uma view group, e nesta viewgroup colocando atributos de foco, como
+    focusable e focusableInTouchMode-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginEnd="20dp"
         android:orientation="horizontal"
         android:focusable="true"
         android:focusableInTouchMode="true"
@@ -91,14 +90,12 @@
 
     </LinearLayout>
 
+    <!-- #Acessibilidade agrupamento views, colocando elementos dentro de
+    uma view group, e nesta viewgroup colocando atributos de foco, como
+    focusable e focusableInTouchMode-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginEnd="20dp"
         android:orientation="horizontal"
         android:focusable="true"
         android:focusableInTouchMode="true">
@@ -116,7 +113,6 @@
             android:textSize="18sp"
             android:text="@string/texto_whiskey_in_the_jar"/>
 
-
     </LinearLayout>
 
     <LinearLayout
@@ -126,12 +122,14 @@
         android:orientation="horizontal"
         >
 
+        <!-- #Acessibilidade agrupamento views, colocando elementos dentro de
+    uma view group, e nesta viewgroup colocando atributos de foco, como
+    focusable e focusableInTouchMode-->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:layout_margin="10dp"
             android:focusable="true"
             android:focusableInTouchMode="true">
 
@@ -152,16 +150,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:text="@string/texto_botao_contratar"/>
+                android:text="@string/texto_botao_contratar"
+                android:contentDescription="contratar plano mensal"/>
 
         </LinearLayout>
 
+        <!-- #Acessibilidade agrupamento views, colocando elementos dentro de
+    uma view group, e nesta viewgroup colocando atributos de foco, como
+    focusable e focusableInTouchMode-->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:layout_margin="10dp"
             android:focusable="true"
             android:focusableInTouchMode="true">
 
@@ -182,7 +183,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:text="@string/texto_botao_contratar"/>
+                android:text="@string/texto_botao_contratar"
+                android:contentDescription="contratar plano trimestral"/>
 
         </LinearLayout>
 
@@ -191,7 +193,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:layout_margin="10dp"
             android:focusable="true"
             android:focusableInTouchMode="true">
 
@@ -212,7 +213,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:text="@string/texto_botao_contratar"/>
+                android:text="@string/texto_botao_contratar"
+                android:contentDescription="contratar plano anual"/>
 
         </LinearLayout>
 

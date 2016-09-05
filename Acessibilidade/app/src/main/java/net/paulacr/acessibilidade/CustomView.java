@@ -1,9 +1,12 @@
 package net.paulacr.acessibilidade;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.os.Build;
+import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
@@ -15,9 +18,10 @@ import org.androidannotations.annotations.EView;
  */
 @EView
 /**
- * Exemplo extraído de http://stackoverflow.com/questions/24723040/how-to-create-a-right-facing-arrow-using-xml-shapes-in-android
+ * Exemplo extraído de http://stackoverflow.com/questions/24723040/
+ * how-to-create-a-right-facing-arrow-using-xml-shapes-in-android
  */
-public class CustomView extends View {
+public class CustomView extends View{
 
     private Paint arrowPaint;
     private Path arrowPath;
@@ -96,13 +100,38 @@ public class CustomView extends View {
         arrowPath.lineTo(startX, startY);
 
         canvas.drawPath(arrowPath, arrowPaint);
-
     }
 
+    /**
+     * #Acessibilidade
+     * Como esta view fica visível em tempo de execução é colocado
+     * dentro da classe dela o announceForAccessibility(text) para
+     * assim que ficar visível seja falada pelo talkback.
+     * Este método é usado quando o estado anterior da view é gone
+     *
+     * @param changedView
+     * @param visibility
+     */
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    @Override
+    protected void onVisibilityChanged(View changedView, int visibility) {
+        super.onVisibilityChanged(changedView, visibility);
+
+        if(visibility == View.VISIBLE) {
+            announceForAccessibility("texto de acessibilidade anunciado");
+        }
+    }
+
+    /**
+     * #Acessibilidade
+     * Este método é sobreescrito para que quando a view for focada
+     * ser falado o conteúdo que está adicionado
+     * @param event
+     * @return
+     */
     @Override
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
         event.getText().add("texto de acessibilidade");
         return true;
     }
-
 }

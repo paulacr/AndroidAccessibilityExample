@@ -1,5 +1,6 @@
 package net.paulacr.acessibilidade;
 
+import android.content.Intent;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -21,18 +22,33 @@ import static org.hamcrest.Matchers.not;
 public class LabelingActivityTest  {
 
     @Rule
-    public ActivityTestRule<LabelingActivity_> rule = new ActivityTestRule<LabelingActivity_>(LabelingActivity_.class);
+    public ActivityTestRule<LabelingActivity_> rule =
+            new ActivityTestRule<>(LabelingActivity_.class);
 
+    /**
+     * #Acessibilidade
+     * Neste teste pode-se verificar a não existência de um contentDescription.
+     * Foi feito assim pois este componente é somente decorativo.
+     * @throws InterruptedException
+     */
     @Test
-    public void testaSeTemNullContentDescription() {
+    public void testaSeTemNullContentDescription() throws InterruptedException {
+        rule.launchActivity(new Intent());
+        Thread.sleep(1000);
         onView(withId(R.id.ic_app_notificacao)).check
                 (matches(not(hasContentDescription())));
     }
 
+    /**
+     * #Acessiblidade
+     * Neste teste validamos se a imagem contém a contentDescription correta
+     * Fazendo isto permitimos que se houver uma troca do valor ou a imagem for
+     * trocada o teste será quebrado, indicando que algo não está correto
+     */
     @Test
     public void testaSeTemContentDescriptionTwitter() {
         onView(withId(R.id.botao_twitter)).check
-                (matches(withContentDescription("Logar com Twitter")));
+                (matches(withContentDescription("Logar com twitter")));
     }
 
 }

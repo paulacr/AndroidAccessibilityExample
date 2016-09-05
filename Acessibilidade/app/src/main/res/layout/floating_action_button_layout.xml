@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
 
-    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -62,6 +62,9 @@
 
     </LinearLayout>
 
+    <!-- #Acessibilidade não esqueça de colocar descrição na imagem
+    do FloatingActionButton pois pode ser lido como "imagem sem marcador"
+    pelo talkback -->
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -69,7 +72,7 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="8dp"
         android:src="@android:drawable/star_on"
-
+        android:contentDescription="Favoritar botão"
         />
 
 </FrameLayout>
