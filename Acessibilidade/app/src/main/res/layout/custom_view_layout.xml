@@ -1,25 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/botao_mostrar_custom_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="mostrar customview"
-        android:textSize="20sp"
-        android:layout_margin="20dp" />
+        android:layout_margin="20dp"
+        android:text="mostrar"
+        android:textSize="20sp" />
 
-        <net.paulacr.acessibilidade.CustomView_
-            android:id="@+id/view_arrow"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:paddingEnd="20dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:visibility="gone"
-            />
+    <net.paulacr.acessibilidade.CustomView_
+        android:id="@+id/view_arrow"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="gone"
+        app:paddingEnd="20dp"
+        android:contentDescription="teste"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="custom view"
+        android:layout_marginLeft="10dp"
+        android:visibility="gone"
+        android:textColor="@android:color/darker_gray"/>
 </LinearLayout>

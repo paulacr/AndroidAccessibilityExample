@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -36,6 +37,8 @@ public class ViewsExpansiveisActivity extends AppCompatActivity {
         String baseContentDescription = "tarefas para lembrar hoje";
         if(layoutTarefasDetalhe.getVisibility() == View.GONE) {
             expandeLayout();
+            layoutViewTarefas.sendAccessibilityEvent(
+                    AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED);
             layoutViewTarefas.setContentDescription(baseContentDescription
                     .concat(" toque duas vezes para recolher"));
             layoutViewTarefas.announceForAccessibility("exibindo tarefas");

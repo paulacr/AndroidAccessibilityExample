@@ -24,7 +24,14 @@
         android:src="@drawable/ic_app"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:contentDescription="@null"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
         />
 
     <TextView
@@ -53,8 +60,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/facebookicon"
-            android:contentDescription="@string/logar_com_facebook"
-
             />
 
         <!-- #Acessibilidade nomeando views através do atributo contentDescription,
@@ -76,7 +81,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/google"
-            android:contentDescription="@string/logar_com_google"
             />
 
     </LinearLayout>

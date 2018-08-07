@@ -4,6 +4,8 @@ import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
@@ -20,6 +22,9 @@ public class CustomViewActivity extends AppCompatActivity{
     @ViewById
     Button botaoMostrarCustomView;
 
+    @ViewById
+    TextView text;
+
     /**
      * #Acessibilidade
      * Quando a view fica visível precisamos que seja falada pelo talkback
@@ -29,9 +34,11 @@ public class CustomViewActivity extends AppCompatActivity{
     @Click(R.id.botao_mostrar_custom_view) void aoClicarBotao() {
         if(viewArrow.getVisibility() == View.GONE) {
             viewArrow.setVisibility(View.VISIBLE);
+            text.setVisibility(View.VISIBLE);
 
         } else {
             viewArrow.setVisibility(View.GONE);
+            text.setVisibility(View.GONE);
         }
     }
 }
