@@ -1,7 +1,11 @@
 package net.paulacr.acessibilidade;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,39 +15,45 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.androidannotations.annotations.Click;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by paularosa on 7/29/16.
  */
-@EActivity(R.layout.live_region_layout)
 public class LiveRegionActivity extends AppCompatActivity {
 
-    @ViewById
     Button botaoBuscarJogos, botaoBuscarJogosComErro;
-
-    @ViewById
     ListView listaJogos;
-
-    @ViewById
     LinearLayout llSistemaIndisponivel;
-
-    @ViewById
     TextView textoMensagemErro;
 
-    @Click(R.id.botao_buscar_jogos) void aoClicarEmBuscarJogos() {
-        exibeDialog();
-        buscaListaJogos();
-    }
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.live_region_layout);
 
-    @Click(R.id.botao_buscar_jogos_com_erro) void aoClicarEmBuscarJogosComErro() {
-        exibeDialog();
-        buscaListaJogosComErroServico();
+        botaoBuscarJogos = findViewById(R.id.botao_buscar_jogos);
+        botaoBuscarJogosComErro = findViewById(R.id.botao_buscar_jogos_com_erro);
+        listaJogos = findViewById(R.id.lista_jogos);
+        llSistemaIndisponivel = findViewById(R.id.ll_sistema_indisponivel);
+        textoMensagemErro = findViewById(R.id.texto_mensagem_erro);
+
+        botaoBuscarJogos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                exibeDialog();
+                buscaListaJogos();
+            }
+        });
+
+        botaoBuscarJogosComErro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                exibeDialog();
+                buscaListaJogosComErroServico();
+            }
+        });
     }
 
     private ProgressDialog dialog;
@@ -130,5 +140,9 @@ public class LiveRegionActivity extends AppCompatActivity {
         jogos.add("Rayman");
 
         return jogos;
+    }
+
+    public static Intent newIntent(Context context) {
+        return new Intent(context, LiveRegionActivity.class);
     }
 }

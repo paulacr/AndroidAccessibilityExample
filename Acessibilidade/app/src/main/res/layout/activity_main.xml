@@ -26,14 +26,6 @@
                 android:textSize="14sp"/>
 
             <Button
-                android:id="@+id/botao_navegacao_views"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/texto_botao_navegacao"
-                android:textSize="14sp"/>
-
-            <Button
                 android:id="@+id/botao_groupviews"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -81,6 +73,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="@string/view_expansivel"
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/tutorial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/tutorial"
                 android:textSize="14sp"/>
 
         </LinearLayout>

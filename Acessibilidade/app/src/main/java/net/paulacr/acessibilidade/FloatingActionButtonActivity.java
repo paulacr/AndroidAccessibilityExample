@@ -1,38 +1,42 @@
 package net.paulacr.acessibilidade;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
-
 /**
  * Created by paularosa on 8/1/16.
  */
-@EActivity(R.layout.floating_action_button_layout)
 public class FloatingActionButtonActivity extends AppCompatActivity {
 
-    @ViewById
-    FloatingActionButton fab;
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.floating_action_button_layout);
 
-    @ViewById
-    TextView textoEditarPerfilFab;
+        FloatingActionButton fab = findViewById(R.id.fab);
+//        TextView textoEditarPerfilFab = findViewById(R.id.texto_editar_perfil_fab);
 
-    /**
-     * #Acessibilidade
-     * Usado método setTranversalBefore(int id) pois o FAB deve ser lido antes
-     * de outros elementos na tela
-     */
-    @AfterViews
-    void aoIniciar() {
+        /**
+         * #Acessibilidade
+         * Usado método setTranversalBefore(int id) pois o FAB deve ser lido antes
+         * de outros elementos na tela
+         */
         if (Build.VERSION.SDK_INT >=
                 Build.VERSION_CODES.LOLLIPOP_MR1) {
-
             fab.setAccessibilityTraversalBefore
                     (R.id.texto_editar_perfil_fab);
         }
+
+    }
+
+    public static Intent newIntent(Context context) {
+        return new Intent(context, FloatingActionButtonActivity.class);
     }
 }

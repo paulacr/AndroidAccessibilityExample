@@ -13,7 +13,7 @@
         android:text="mostrar"
         android:textSize="20sp" />
 
-    <net.paulacr.acessibilidade.CustomView_
+    <net.paulacr.acessibilidade.CustomView
         android:id="@+id/view_arrow"
         android:layout_width="100dp"
         android:layout_height="100dp"

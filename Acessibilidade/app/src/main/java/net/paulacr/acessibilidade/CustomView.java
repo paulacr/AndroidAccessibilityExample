@@ -16,7 +16,7 @@ import org.androidannotations.annotations.EView;
 /**
  * Created by paularosa on 8/1/16.
  */
-@EView
+
 /**
  * Exemplo extraído de http://stackoverflow.com/questions/24723040/
  * how-to-create-a-right-facing-arrow-using-xml-shapes-in-android

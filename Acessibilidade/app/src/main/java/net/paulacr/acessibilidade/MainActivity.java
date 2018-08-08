@@ -1,38 +1,72 @@
 package net.paulacr.acessibilidade;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
-import org.androidannotations.annotations.Click;
-import org.androidannotations.annotations.EActivity;
-
-@EActivity(R.layout.activity_main)
 public class MainActivity extends AppCompatActivity {
 
-    @Click(R.id.botao_labeling_views) void aoClicarEmLabeling() {
-        LabelingActivity_.intent(this).start();
-    }
 
-    @Click(R.id.botao_edittext) void aoClicarEmEditText() {
-        EditTextActivity_.intent(this).start();
-    }
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-    @Click(R.id.botao_groupviews) void aoClicarEmGroupViews() {
-        AgruparViewsActivity_.intent(this).start();
-    }
+        findViewById(R.id.botao_labeling_views).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(LabelingActivity.newIntent(MainActivity.this));
+            }
+        });
 
-    @Click(R.id.botao_liveregion) void aoClicarEmLiveRegion() {
-        LiveRegionActivity_.intent(this).start();
-    }
+        findViewById(R.id.botao_edittext).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(EditTextActivity.newIntent(MainActivity.this));
+            }
+        });
 
-    @Click(R.id.botao_customview) void aoClicarEmCustomView() {
-        CustomViewActivity_.intent(this).start();
-    }
+        findViewById(R.id.botao_groupviews).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(AgruparViewsActivity.newIntent(MainActivity.this));
+            }
+        });
 
-    @Click(R.id.botao_floating_action_button) void aoClicarEmFloatingActionButton() {
-        FloatingActionButtonActivity_.intent(this).start();
-    }
+        findViewById(R.id.botao_liveregion).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(LiveRegionActivity.newIntent(MainActivity.this));
+            }
+        });
 
-    @Click(R.id.botao_view_expansivel) void aoClicarViewsExpansiveis() {
-        ViewsExpansiveisActivity_.intent(this).start();
+        findViewById(R.id.botao_customview).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(CustomViewActivity.newIntent(MainActivity.this));
+            }
+        });
+
+        findViewById(R.id.botao_floating_action_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(FloatingActionButtonActivity.newIntent(MainActivity.this));
+            }
+        });
+
+        findViewById(R.id.botao_view_expansivel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(ViewsExpansiveisActivity.newIntent(MainActivity.this));
+            }
+        });
+
+        findViewById(R.id.tutorial).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(TutorialActivity.newIntent(MainActivity.this));
+            }
+        });
     }
 }
