@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomView">
+
+        <attr name="acessibilidade_texto_foco" format="string"/>
+        <attr name="acessibilidade_texto_click" format="string"/>
+    </declare-styleable>
+
+</resources>

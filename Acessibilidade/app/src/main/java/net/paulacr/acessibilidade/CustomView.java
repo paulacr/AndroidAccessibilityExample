@@ -2,6 +2,7 @@ package net.paulacr.acessibilidade;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
@@ -30,18 +31,31 @@ public class CustomView extends View{
     private int diameter = 5, diameter_calc, radius_calc;
     private int startX, startY, currentX, currentY;
 
+    private String acessibilidadeTextoFoco, acessibilidadeTextoClick;
+
     public CustomView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
     public CustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init(context, attrs);
         stuff();
     }
 
     public CustomView(Context context) {
         super(context);
         stuff();
+    }
+
+    private void init(Context context, AttributeSet attributeSet) {
+
+        TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.CustomView);
+
+        acessibilidadeTextoFoco = typedArray.getString(R.styleable.CustomView_acessibilidade_texto_foco);
+        acessibilidadeTextoClick = typedArray.getString(R.styleable.CustomView_acessibilidade_texto_click);
+
+        typedArray.recycle();
     }
 
     private void stuff() {
@@ -104,26 +118,6 @@ public class CustomView extends View{
 
     /**
      * #Acessibilidade
-     * Como esta view fica visível em tempo de execução é colocado
-     * dentro da classe dela o announceForAccessibility(text) para
-     * assim que ficar visível seja falada pelo talkback.
-     * Este método é usado quando o estado anterior da view é gone
-     *
-     * @param changedView
-     * @param visibility
-     */
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-    @Override
-    protected void onVisibilityChanged(View changedView, int visibility) {
-        super.onVisibilityChanged(changedView, visibility);
-
-        if(visibility == View.VISIBLE) {
-            announceForAccessibility("texto de acessibilidade anunciado");
-        }
-    }
-
-    /**
-     * #Acessibilidade
      * Este método é sobreescrito para que quando a view for focada
      * ser falado o conteúdo que está adicionado
      * @param event
@@ -131,7 +125,10 @@ public class CustomView extends View{
      */
     @Override
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
-        event.getText().add("texto de acessibilidade");
+
+        if(event.getEventType() == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
+            event.getText().add("texto de acessibilidade");
+        }
         return true;
     }
 }
