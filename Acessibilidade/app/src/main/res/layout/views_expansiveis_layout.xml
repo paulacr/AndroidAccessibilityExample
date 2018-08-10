@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:contentDescription="tarefas para lembrar hoje, toque duas vezes para expandir"
         >
 
         <TextView
@@ -39,22 +38,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:nextFocusDown="@id/mercado">
 
         <TextView
+            android:id="@+id/mercado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="* Passar no supermercado"/>
+            android:text="Passar no supermercado"
+            android:nextFocusDown="@id/louca"/>
 
         <TextView
+            android:id="@+id/louca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="* Lavar a louça"/>
+            android:text="Lavar a louça"
+            android:nextFocusDown="@id/estudar"/>
 
         <TextView
+            android:id="@+id/estudar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="* Estudar"/>
+            android:text="Estudar"/>
 
     </LinearLayout>
 

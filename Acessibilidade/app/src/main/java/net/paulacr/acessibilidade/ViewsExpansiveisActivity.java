@@ -41,22 +41,35 @@ public class ViewsExpansiveisActivity extends AppCompatActivity {
          * também podemos anunciar para o talkback algum outro texto
          * mais explicativo, através do método announceForAccessibility(text)
          */
+        final String baseContentDescription = "tarefas para lembrar hoje";
         layoutViewTarefas.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onClick(View v) {
-                String baseContentDescription = "tarefas para lembrar hoje";
+
                 if(layoutTarefasDetalhe.getVisibility() == View.GONE) {
                     expandeLayout();
-                    layoutViewTarefas.sendAccessibilityEvent(
-                            AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED);
                     layoutViewTarefas.setContentDescription(baseContentDescription
                             .concat(" toque duas vezes para recolher"));
-                    layoutViewTarefas.announceForAccessibility("exibindo tarefas");
+                    layoutTarefasDetalhe.sendAccessibilityEvent(
+                            AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED);
+//                    layoutViewTarefas.announceForAccessibility("exibindo tarefas");
                 } else {
                     recolheLayout();
                     layoutViewTarefas.setContentDescription(baseContentDescription.concat
                             (" toque duas vezes para expandir"));
+                }
+            }
+        });
+
+
+        layoutViewTarefas.setAccessibilityDelegate(new View.AccessibilityDelegate() {
+            @Override
+            public void onPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
+                super.onPopulateAccessibilityEvent(host, event);
+
+                if(event.getEventType() == AccessibilityEvent.TYPE_VIEW_CLICKED) {
+                    sendAccessibilityEvent(layoutTarefasDetalhe, AccessibilityEvent.TYPE_VIEW_FOCUSED);
                 }
             }
         });

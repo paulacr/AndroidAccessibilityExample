@@ -4,15 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:text="@string/texto_bem_vindo_ao_lembretes"/>
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginStart="20dp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:textSize="20sp"-->
+        <!--android:text="@string/texto_bem_vindo_ao_lembretes"/>-->
 
     <!-- #Acessibilidade nomeando views através do atributo contentDescription,
     para dar significado a view que está sendo lida pelo talkback.
@@ -24,6 +24,8 @@
         android:src="@drawable/ic_app"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
         />
 
     <ImageView
